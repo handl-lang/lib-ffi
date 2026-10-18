@@ -1,0 +1,2 @@
+-- lib-ffi: package manifest.
+{ modules: ["ffi"] }
