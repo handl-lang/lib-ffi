@@ -4,7 +4,7 @@
 --- This package exposes the typed FFI surface that SDK-generated adapters
 --- import.
 
-from "../type" import { Obj, Int }
+from "../../lib-type/src" import { Obj, Int }
 
 --- C `errno` value as a Handl Int.
 --- @details
