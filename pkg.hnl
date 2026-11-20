@@ -1,2 +1,9 @@
 -- lib-ffi: package manifest.
-{ modules: ["ffi"] }
+{
+  modules: ["ffi"],
+  name: "ffi",
+  description: "FFI decls for handl FFI — Errno and the call surface.",
+  license: "MIT",
+  keywords: ["ffi", "bindings", "stdlib", "handl"],
+  homepage: "https://github.com/handl-lang/lib-ffi",
+}

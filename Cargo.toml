@@ -2,9 +2,11 @@
 name = "handl-lib-ffi"
 version = "0.1.0"
 edition = "2024"
-description = "ffi: libc clock_gettime backend for the time contract — Handl stdlib port (ADR-0128 split)."
-license = "MIT OR Apache-2.0"
+description = "ffi — FFI decls for handl FFI (Errno, call surface)."
+license = "MIT"
 repository = "https://github.com/handl-lang/lib-ffi"
+readme = "README.md"
+homepage = "https://github.com/handl-lang/lib-ffi"
 
 # Const-only: pure handl.
 [dependencies]
