@@ -1,5 +1,6 @@
 -- lib-ffi: package manifest.
 {
+  deps: { type: "branch:main" },
   modules: ["ffi"],
   name: "ffi",
   description: "FFI decls for handl FFI — Errno and the call surface.",
