@@ -6,7 +6,7 @@
 
 [[repos]]
 name = "handl-lang/lib-ffi"
-dir = "/home/luis/GitHub/handl-lang/lib-ffi"
+dir = "~//GitHub/handl-lang/lib-ffi"
 branch = "refs/heads/main"
   [repos.runner]
   kind = "script"
