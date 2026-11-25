@@ -1,0 +1,22 @@
+--- Smoke tests for the `ffi` module (`src/ffi.hnl`).
+---
+--- Every export is an injected runtime primitive (`call`, `bind`,
+--- `errno`, `load`, `read`, `sym`) — the `.hnl` only carries their
+--- typed signatures, so there is no handl-level behaviour to assert
+--- beyond the surface loading with all six exports present. Actually
+--- invoking them needs a live foreign symbol and is covered by the
+--- ffi consumers' tests.
+
+from "./ffi" import * as f
+
+test_call_export := assert f.call != null
+
+test_bind_export := assert f.bind != null
+
+test_errno_export := assert f.errno != null
+
+test_load_export := assert f.load != null
+
+test_read_export := assert f.read != null
+
+test_sym_export := assert f.sym != null
