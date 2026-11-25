@@ -27,7 +27,7 @@ export Handle := Obj
 --- `call` is a low-level FFI primitive that invokes a foreign function
 --- with the given arguments and returns a foreign value. The `call` function
 --- is injected by the runtime and is not implemented in Handl itself.
-export call := (String, String, Array, Array, String, Bool) ~[1]~> Value
+export call := (String, String, Array, Array, String, Bool) ~>[1] Value
 
 --- Bind a foreign function to a Handl function.
 --- @param lib The name of the foreign library to load.
@@ -40,7 +40,7 @@ export call := (String, String, Array, Array, String, Bool) ~[1]~> Value
 --- `bind` is a low-level FFI primitive that binds a foreign function
 --- to a Handl function. The `bind` function is injected by the runtime
 --- and is not implemented in Handl itself.
-export bind := (String, String, Array, Array, String, Bool) ~[1]~> Value
+export bind := (String, String, Array, Array, String, Bool) ~>[1] Value
 
 --- Return the current value of the C `errno` variable.
 --- @return The current value of the C `errno` variable.
@@ -48,7 +48,7 @@ export bind := (String, String, Array, Array, String, Bool) ~[1]~> Value
 --- `errno` is a low-level FFI primitive that returns the current value of
 --- the C `errno` variable. The `errno` function is injected by the runtime
 --- and is not implemented in Handl itself.
-export errno := () ~[1]~> Errno
+export errno := () ~>[1] Errno
 
 --- Probe a library for availability without raising.
 --- @param lib The name of the foreign library to load.
@@ -58,7 +58,7 @@ export errno := () ~[1]~> Errno
 --- `{__tag__: "ok"}` on success, `{__tag__: "err", value: msg}` on
 --- failure. The Result-pattern way to probe versioned sonames and
 --- optional dependencies.
-export load := (String) ~[1]~> Value
+export load := (String) ~>[1] Value
 
 --- Read memory through a foreign pointer.
 --- @param ptr A raw address (Int) or opaque handle (`__resource__`).
@@ -71,7 +71,7 @@ export load := (String) ~[1]~> Value
 --- (`ai_next`), and pointed-to payloads (`ai_addr`) that `call` cannot
 --- hand back by value. Reading an invalid pointer is a fault; read only
 --- addresses C has handed you.
-export read := (Value, String) ~[1]~> Value
+export read := (Value, String) ~>[1] Value
 
 --- Probe a symbol in a library without raising.
 --- @param lib The name of the foreign library to load.
@@ -81,4 +81,4 @@ export read := (Value, String) ~[1]~> Value
 --- Resolves `sym` in `lib` (dlopening if needed). Returns
 --- `{__tag__: "ok", value: addr}` with the symbol address, or
 --- `{__tag__: "err", value: msg}`.
-export sym := (String, String) ~[1]~> Value
+export sym := (String, String) ~>[1] Value
